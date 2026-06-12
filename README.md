@@ -22,7 +22,8 @@ Create `blog/<slug>.mdx` with frontmatter, then the body in Markdown/MDX:
 ```mdx
 ---
 title: "Your post title"
-date: "2026-06-12"          # YYYY-MM-DD — newest first
+date: "2026-06-12"          # YYYY-MM-DD — original publish date (newest first)
+updated: "2026-07-01"       # optional — last-updated date, shown when it differs
 excerpt: "Shown in cards, RSS, and the page <meta>."
 tag: "Applied AI"            # optional
 draft: true                  # optional — hidden in production, shown in dev
