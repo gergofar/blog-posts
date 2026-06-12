@@ -1,0 +1,32 @@
+---
+title: "Why I still build models from scratch"
+date: "2026-05-22"
+excerpt: "Consuming an API teaches you what a model does. Building one from scratch teaches you why it fails — and that's the knowledge that compounds."
+tag: "Machine Learning"
+---
+
+It would be faster to call an API. That's exactly why I don't always do it.
+
+When you wire up a hosted model, you learn its *interface*. When you build one
+end to end — data preparation, architecture, training loop, deployment — you
+learn its *failure modes*. The second kind of knowledge is the one that keeps
+paying off.
+
+## What you only learn by building
+
+- **Where the data really comes from.** Most model problems are data problems
+  wearing a model costume.
+- **What the loss is actually optimising.** Metrics lie politely; the loss
+  tells the truth.
+- **Why inference is slow.** You feel every unnecessary copy when you own the
+  whole path.
+
+## It keeps leadership honest
+
+As an engineering leader, staying close to the craft isn't nostalgia — it's
+how I keep my technical judgment calibrated. It's much harder to set a
+realistic roadmap for something you've only ever seen through a dashboard.
+
+So I keep a small habit: every so often, build the thing from scratch in
+Python and PyTorch, own the entire lifecycle, and let the rough edges teach
+me what the abstractions were hiding.
