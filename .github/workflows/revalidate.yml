@@ -1,0 +1,22 @@
+name: Revalidate site
+
+# When a post or image changes, ping the website so it purges its post cache
+# and serves the new content immediately (instead of waiting for the time-based
+# fallback). The shared secret lives in this repo's Actions secrets
+# (Settings → Secrets and variables → Actions → REVALIDATE_TOKEN) — safe even
+# though the repo is public.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "blog/**"
+      - "images/**"
+
+jobs:
+  revalidate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping revalidation endpoint
+        run: |
+          curl -fsS -X POST https://gergofar.com/api/revalidate \
+            -H "Authorization: Bearer ${{ secrets.REVALIDATE_TOKEN }}"
